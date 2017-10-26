@@ -1,0 +1,29 @@
+@media (min-width: 1200px){
+	#wrapper .container-fluid {
+	    max-width: 1140px;
+	}
+}
+
+#wrapper{
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+#checkoutList{
+	text-align: center;
+}
+
+.display-5 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+#wrapper th {
+    text-align: center;
+}
+
+#shipAddr{
+	padding: 15px;
+	text-align: left;
+}

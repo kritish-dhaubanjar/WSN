@@ -1,0 +1,32 @@
+@media (min-width: 1200px){
+	#wrapper .container-fluid {
+	    max-width: 1140px;
+	}
+}
+
+#wrapper{
+	margin-top: 50px;
+	margin-bottom: 70px;
+}
+
+@media screen and (min-width: 576px){
+	.custom-form{
+		text-align: right;
+	}
+}
+.custom-form{
+	/*text-align: right;*/
+	max-width: 576px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+#wrapper button{
+	display: block;
+	margin: auto;
+	border-radius: 1em;
+}
+
+#wrapper form p:hover{
+	color: #000;
+}
