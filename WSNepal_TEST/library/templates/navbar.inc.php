@@ -1,7 +1,8 @@
 <?php
-  // session_start();
-?>    
-    <div class="container-fluid bg-dark bar">
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?><div class="container-fluid bg-dark bar">
       <div class="row">
         <div class="news col-md-3">FREE DELIVERY ABOVE Rs.950</div>
         <div id="social" class="col-md-9">
@@ -53,7 +54,7 @@
             <div class="ml-auto"></div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="saree.php">SAREE<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="saree.php">SAREE</a>
               </li>               
               <li class="nav-item">
                 <a class="nav-link" href="lengha.php">LENGHAS</a>

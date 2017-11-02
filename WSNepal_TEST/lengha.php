@@ -1,5 +1,6 @@
 <?php
 	ob_start();
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@
               <input name="large" type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">L</span>
-            </label><br><br> -->  
+            </label><br><br>-->  
 
             <h6>COLOR</h6>
             <label class="custom-control custom-checkbox">
@@ -92,7 +93,8 @@
               <input name="c" type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">NRs 6,000 - NRs 10,999</span>
-            </label><br><br><br>
+            </label><br>
+            <br><br>
           </form>
           <button id="clear" type="submit" class="btn btn-dark btn-lg">CLEAR FILTER</button>
           </div>
