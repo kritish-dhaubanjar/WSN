@@ -170,7 +170,7 @@
     <div class="container">
     <h3>Create an account</h3><br>
     <h4>Create an account for fast checkouts and easy access to order history.</h4><br>
-<!--           <div class="password_error alert alert-danger" role="alert" style="display: none;">
+          <div class="password_error alert alert-danger" role="alert" style="display: none;">
             Holy guacamole! You should check in on your passwords. Either too weak or doesn't match.
           </div>
           <div class="field_error alert alert-warning" role="alert" style="display: none;">
@@ -178,7 +178,7 @@
           </div>
           <div class="email_error alert alert-danger" role="alert" style="display: none;">
             Holy guacamole! Your email has already been used for an account.
-          </div>   -->  
+          </div>    
     <br>
       <form method="POST" action="signin.php" name="signup">
         <div class="custom-form form-group row">
@@ -235,17 +235,6 @@
             <input type="text" class="form-control" id="inputAddress" placeholder="0123456789" name="contact">
           </div>
         </div> 
-
-          <div class="password_error alert alert-danger" role="alert" style="display: none;">
-            Holy guacamole! You should check in on your passwords. Either too weak or doesn't match.
-          </div>
-          <div class="field_error alert alert-warning" role="alert" style="display: none;">
-            Holy guacamole! You should check in on some of those fields below.
-          </div>
-          <div class="email_error alert alert-danger" role="alert" style="display: none;">
-            Holy guacamole! Your email has already been used for an account.
-          </div>  
-      
         <button id='signup' type="submit" class="btn btn-outline-dark btn-lg">Continue</button>
         <hr>
       </form><br><br>

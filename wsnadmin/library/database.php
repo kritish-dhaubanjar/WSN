@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$user = 'admin';
-$pass = '';
+$user = 'root';
+$pass = 'toor';
 $database = 'wsnepal';
 
 function db_connect($host,$user,$pass,$database){

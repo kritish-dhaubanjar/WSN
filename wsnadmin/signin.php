@@ -1,4 +1,5 @@
 <?php
+  ob_start();
   session_start();
 
   require 'library/database.php';
@@ -6,7 +7,7 @@
     if(!empty($_GET['adminName']) && !empty($_GET['adminPassword'])){
       $username = $_GET['adminName'];
       $password = $_GET['adminPassword'];
-      echo $admin_query = "SELECT id, username, password FROM admin WHERE username = '$username' AND password = '$password' ";
+      $admin_query = "SELECT id, username, password FROM admin WHERE username = '$username' AND password = '$password' ";
       $admin = mysqli_query($con,$admin_query);
       $admin = mysqli_fetch_assoc($admin);
       $_SESSION['adminId'] = $admin['id'];
@@ -15,6 +16,7 @@
     }else{
       $_SESSION['adminId'] = null;
       header('Location: index.php');
+      exit();
     }
   }
 ?>

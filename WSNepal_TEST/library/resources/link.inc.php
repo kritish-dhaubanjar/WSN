@@ -1,3 +1,6 @@
+<?php
+	error_reporting(0);
+?>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/hover.css" type="text/css">
@@ -9,14 +12,15 @@
     <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <?php
-    		//ini_set('error_reporting',1);
    		require_once 'database.php';
     ?>
+<!-- Facebook Plugin -->
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    

@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,18 +10,18 @@
       <!-- OWL Carousel -->
       <div id="backCarousel" class="owl-carousel owl-theme owl-loaded">
         <div><div class="custom-inner0 jumbotron jumbotron-fluid">
-          <h1 class="display-4 text-center">Vintage Wash Crewneck</h1>
-          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p>
+<!--           <h1 class="display-4 text-center">Vintage Wash Crewneck</h1>
+          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p> -->
         </div></div>
 
         <div><div class="custom-inner1 jumbotron jumbotron-fluid">
-          <h1 class="display-4 text-center">Modern Crew tree</h1>
-          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p>
+<!--           <h1 class="display-4 text-center">Modern Crew tree</h1>
+          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p> -->
         </div></div>
 
         <div><div class="custom-inner2 jumbotron jumbotron-fluid">
-          <h1 class="display-4 text-center">City Graphic Crew tree</h1>
-          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p>
+<!--           <h1 class="display-4 text-center">City Graphic Crew tree</h1>
+          <p class="text-center lead">Garment-dyed and washed with a special technique for incredible,<br> softness and true color.</p> -->
         </div></div>
       </div>
 
@@ -68,30 +67,108 @@
       </div>
         <br><br>
 
+<!-- New 6 Items -->
+<?php
+  $sareeQuery = "SELECT * FROM products WHERE category='saree'  ORDER By productId DESC LIMIT 1";
+  $lenghaQuery = "SELECT * FROM products WHERE category='lengha'  ORDER By productId DESC LIMIT 1";
+  $shoesQuery = "SELECT * FROM products WHERE category='shoes'  ORDER By productId DESC LIMIT 2";
+  $dressQuery = "SELECT * FROM products WHERE category='dress'  ORDER By productId DESC LIMIT 2";
+  $bagQuery = "SELECT * FROM products WHERE category='bag'  ORDER By productId DESC LIMIT 2";
+
+  $sarees = mysqli_query($con, $sareeQuery);
+  $lenghas = mysqli_query($con, $lenghaQuery);
+  $shoes = mysqli_query($con, $shoesQuery);
+  $dresses = mysqli_query($con, $dressQuery);
+  $bags = mysqli_query($con, $bagQuery);
+
+?>
     <div id="indicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
               <div class="carousel-item active">
                   <div class="row">
-                    <div class="item col-md-4">
+  <?php
+    while($saree = mysqli_fetch_assoc($sarees)){
+
+  ?>
+                    <div class="item col-md-3">
                       <div class="text-center">
                         <div class="container-image">
-                          <img src="images/cards/001.jpg" class="image img-fluid img-thumbnail">
+                          <img src="<?php echo $saree['image1']?>" class="image img-fluid img-thumbnail">
                           <div class="middle">
-                            <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                            <div class="text"><a href="details.php?productCat=<?php echo $saree['category'];?>&productId=<?php echo $saree['productId'];?>"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
                           </div>
                         </div>
-                        <h4 class="title">LOREM IPSUM</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
+                        <h4 class="title"><?php echo  strtoupper($saree['title']);?></h4>
+                        <p><?php echo $saree['description']?></p>
+                        <h4>NRs <?php echo $saree['price']?> 
+                          <?php
+                            if($saree['oldPrice'] != null){ ?>
+                                <span class="old"> NRs <?php echo $saree['oldPrice'] ;?></span>
+                            <?php } ?>
+                        </h4>
                       </div>
                     </div>
-                    <div class="item col-md-4">
+  <?php } ?>             
+
+    <?php
+    while($lengha = mysqli_fetch_assoc($lenghas)){
+
+  ?>
+                    <div class="item col-md-3">
+                      <div class="text-center">
+                        <div class="container-image">
+                          <img src="<?php echo $lengha['image1']?>" class="image img-fluid img-thumbnail">
+                          <div class="middle">
+                            <div class="text"><a href="
+                              details.php?productCat=<?php echo $lengha['category'];?>&productId=<?php echo $lengha['productId'];?>
+                              "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                          </div>
+                        </div>
+                        <h4 class="title"><?php echo  strtoupper($lengha['title']);?></h4>
+                        <p><?php echo $lengha['description']?></p>
+                        <h4>NRs <?php echo $lengha['price']?> 
+                          <?php
+                            if($lengha['oldPrice'] !=null){ ?>
+                                <span class="old"> NRs <?php echo $lengha['oldPrice'] ;?></span>
+                            <?php } ?>
+                        </h4>
+                      </div>
+                    </div>
+  <?php } ?> 
+      <?php
+    while($bag = mysqli_fetch_assoc($bags)){
+
+  ?>
+                    <div class="item col-md-3">
+                      <div class="text-center">
+                        <div class="container-image">
+                          <img src="<?php echo $bag['image1']?>" class="image img-fluid img-thumbnail">
+                          <div class="middle">
+                            <div class="text"><a href="
+                              details.php?productCat=<?php echo $bag['category'];?>&productId=<?php echo $bag['productId'];?>
+                              "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                          </div>
+                        </div>
+                        <h4 class="title"><?php echo  strtoupper($bag['title']);?></h4>
+                        <p><?php echo $bag['description']?></p>
+                        <h4>NRs <?php echo $bag['price']?> 
+                          <?php
+                            if($bag['oldPrice'] !=null){ ?>
+                                <span class="old"> NRs <?php echo $bag['oldPrice'] ;?></span>
+                            <?php } ?>
+                        </h4>
+                      </div>
+                    </div>
+  <?php } ?> 
+
+                    <!-- <div class="item col-md-4">
                       <div class="text-center">
                         <div class="container-image">
                           <img src="images/cards/002.jpg" class="image img-fluid img-thumbnail">
                           <div class="middle">
-                            <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                            <div class="text"><a href="
+                            details.php?productCat=saree&productId=1001
+                            "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
                           </div>
                         </div>
                         <h4 class="title">LOREM IPSUM</h4>
@@ -105,7 +182,9 @@
                         <div class="container-image">
                           <img src="images/cards/003.jpg" class="image img-fluid img-thumbnail">
                           <div class="middle">
-                            <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                            <div class="text"><a href="
+                            details.php?productCat=saree&productId=1001
+                            "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
                           </div>
                         </div>
                         <h4 class="title">LOREM IPSUM</h4>
@@ -113,13 +192,67 @@
                         tempor incididunt ut labore et dolore magna aliqua.</p>
                         <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
 
               <div class="carousel-item">
                   <div class="row">
-                    <div class="item col-md-4">
+  <?php
+    while($shoe = mysqli_fetch_assoc($shoes)){
+
+  ?>
+                    <div class="item col-md-3">
+                      <div class="text-center">
+                        <div class="container-image">
+                          <img src="<?php echo $shoe['image1']?>" class="image img-fluid img-thumbnail">
+                          <div class="middle">
+                            <div class="text"><a href="
+                              details.php?productCat=<?php echo $shoe['category'];?>&productId=<?php echo $shoe['productId'];?>
+                              "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                          </div>
+                        </div>
+                        <h4 class="title"><?php echo  strtoupper($shoe['title']);?></h4>
+                        <p><?php echo $shoe['description']?></p>
+                        <h4>NRs <?php echo $shoe['price']?> 
+                          <?php
+                            if($shoe['oldPrice'] !=null){ ?>
+                                <span class="old"> NRs <?php echo $shoe['oldPrice'] ;?></span>
+                            <?php } ?>
+                        </h4>
+                      </div>
+                    </div>
+  <?php } ?>             
+
+    <?php
+    while($dress = mysqli_fetch_assoc($dresses)){
+
+  ?>
+                    <div class="item col-md-3">
+                      <div class="text-center">
+                        <div class="container-image">
+                          <img src="<?php echo $dress['image1']?>" class="image img-fluid img-thumbnail">
+                          <div class="middle">
+                            <div class="text"><a href="
+                              details.php?productCat=<?php echo $dress['category'];?>&productId=<?php echo $dress['productId'];?>
+                              "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                          </div>
+                        </div>
+                        <h4 class="title"><?php echo  strtoupper($dress['title']);?></h4>
+                        <p><?php echo $dress['description']?></p>
+                        <h4>NRs <?php echo $dress['price']?> 
+                          <?php
+                            if($dress['oldPrice'] !=null){ ?>
+                                <span class="old"> NRs <?php echo $dress['oldPrice'] ;?></span>
+                            <?php } ?>
+                        </h4>
+                      </div>
+                    </div>
+  <?php } ?> 
+
+
+
+ <!--                    <div class="item col-md-4">
                       <div class="text-center">
                         <div class="container-image">
                           <img src="images/cards/001.jpg" class="image img-fluid img-thumbnail">
@@ -160,7 +293,7 @@
                         tempor incididunt ut labore et dolore magna aliqua.</p>
                         <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
                       </div>
-                    </div>
+                    </div> -->
                 </div>
               </div>
       </div>

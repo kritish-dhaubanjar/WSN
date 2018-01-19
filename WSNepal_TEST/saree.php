@@ -1,6 +1,6 @@
 <?php
-	ob_start();
-  session_start();
+    ob_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@
 
 
   <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="http://localhost/WSNepal">Home</a>
+    <a class="breadcrumb-item" href="index.php">Home</a>
     <span class="breadcrumb-item active">saree</span>
   </nav>
 
@@ -107,7 +107,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
             <div class="col-md-3">
-              <img src="images/blouses.jpg" class="img-fluid">
+              <img src="images/icons/saree_icon.jpg" class="img-fluid">
             </div>
           </div>
             <nav class="navbar navbar-light bg-light">

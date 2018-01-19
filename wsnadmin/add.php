@@ -114,6 +114,10 @@
                 <select name="category" class="form-control" id="Category" aria-describedby="nameHelp">
                   <option value="saree">Saree</option>
                   <option value="lengha">Lengha</option>
+                  <option value="kurta">Kurtas</option>
+                  <option value="shoes">Shoes</option>
+                  <option value="dress">Dress</option>
+                  <option value="bag">Bags</option>
                 </select>
               </div>
             </div>

@@ -22,23 +22,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/details.css" rel="stylesheet" type="text/css">
     <?php include 'library/resources/link.inc.php';?>
-<div id="fb-root"></div>
-
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-
   </head>
   <body>
 
   <?php include 'library/templates/navbar.inc.php';?>
 
   <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="http://localhost/WSNepal">Home</a>
+    <a class="breadcrumb-item" href="index.php">Home</a>
     <a class="breadcrumb-item" href="<?php echo $cat.'.php';?>"><?php echo $cat;?></a>
     <span class="breadcrumb-item active"><?php echo $product['title'];?></span>
   </nav>
@@ -63,7 +53,7 @@
           <h1><?php echo $product['title'];?></h1><br>
           <h3>NRs <?php echo $product['price'];?>.00</h3><br>
           <?php if(!empty($product['oldPrice'])){?>
-              <h4 style="text-decoration: line-through; color: #666;"> NRs <?php echo $product['oldPrice'];?>.00</h4><br>
+              <h4 style="text-decoration: line-through;"> NRs <?php echo $product['oldPrice'];?>.00</h4><br>
           <?php }
             if($product['stock'] > 0)
               echo $stock = '<span style="color: green"><i class="fa fa-check" aria-hidden="true"></i> In Stock</span>';
@@ -74,20 +64,17 @@
           <!-- <span style="color: green"><i class="fa fa-check" aria-hidden="true"></i> In Stock</span> -->
 
           <br><br>
-          <!-- <p class="lead"><?php //echo $product['details'];?></p> -->
-
-          <p id="p-details" class="lead"><?php echo $product['description'];?></p>
-          <br>
+          <p class="lead"><?php echo $product['details'];?></p>
+          <br><br>
           <form>
             SIZE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <select class="custom-select" id="size" <?php if($cat=='saree' || $cat=='lengha'){ echo 'disabled';}?> >
+            <select class="custom-select" id="size">
             <option value="o">Select Size</option>
-              <?php 
-               if($product['s'] == 1) {echo '<option value="s">S</option>';} 
-               if($product['m'] == 1) {echo '<option value="m">M</option>';} 
-               if($product['l'] == 1) {echo '<option value="l">L</option>';} ?>
-            </select><br><br>
-            
+              <?php if($product['s'] == 1) {echo '<option value="s">S</option>';} ?>
+              <?php if($product['m'] == 1) {echo '<option value="m">M</option>';} ?>
+              <?php if($product['l'] == 1) {echo '<option value="l">L</option>';} ?>
+            </select>
+            <br><br>
             Quantity&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             <select class="custom-select" id="qty">
               <?php if($product[stock] >= 1)  echo '<option value="1">1</option>' ?>
@@ -144,10 +131,12 @@
               <?php echo $product['description'];?>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <?php echo $product['moreDetails'];?>
+              <?php echo $product['details'];?>
             </div>
           </div>
         </div>
+
+<!-- For Mobile Devices Only -->
 
         <div id="accordion" role="tablist">
           <div class="card">
@@ -175,75 +164,115 @@
             </div>
             <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
-                <?php echo $product['moreDetails'];?>
+                <?php echo $product['details'];?>
               </div>
             </div>
           </div>
         </div>
   </div>
+
 </div>
+
+<!-- Facebook Comment Plugin -->
+<?php
+  $hostName = "http://127.0.0.1";
+  //echo $hostName.$_SERVER['REQUEST_URI'];
+?>
 
 <div class="container">
-<?php //echo $_SERVER['REQUEST_URI'];?>
-<div class="fb-comments" data-href="http://jyashaa.com<?php echo $_SERVER['REQUEST_URI'];?>" data-numposts="5" data-width="100%" data-colorscheme="light"></div>
+  <div class="fb-comments" data-href="<?php echo $hostName.$_SERVER['REQUEST_URI']; ?>" data-numposts="5" width="100%"></div>
 </div>
 
+<!-- Random Products from Database -->
+<?php
+  $item1 = rand(1000,2000);
+  $item2 = rand(2001,3000);
+  $item3 = rand(3001,4000);
+  $item4 = rand(4000,5000);
+  $product[0] = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM products WHERE productId= 1000"));
+  $product[1] = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM products WHERE productId= 1001"));
+  $product[2] = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM products WHERE productId= 2000"));
+  $product[3] = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM products WHERE productId= 1001"));
+
+?>
 <div id="products" class="container" style="padding-top: 10px; padding-bottom: 20px;">
   <h3 class="text-center">YOU MIGHT ALSO LIKE</h3>
   <br><br>
     <div class="row">
+
+    <?php
+      for($i=0; $i<4; $i++){
+    ?>
+
       <div class="item col-md-3">
         <div class="text-center">
             <div class="container-image">
-              <img src="http://via.placeholder.com/510x680" class="image img-fluid img-thumbnail">
+              <img src="<?php echo $product[$i]['image1'];?>" class="image img-fluid img-thumbnail">
               <div class="middle">
-                <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
+                <div class="text"><a href="
+
+                  details.php?productCat=<?php echo $product[$i]['category']?>&productId=<?php echo $product[$i]['productId']?>
+
+                  "><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
               </div>
             </div>
           <!-- <img src="http://via.placeholder.com/510x680" class="img-fluid img-thumbnail"> -->
-          <h4 class="title">Crochet Lace Scoop Tank</h4>
-          <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
+          <h4 class="title"><?php echo $product[$i]['title']; ?></h4>
+          <h4>NRs <?php echo $product[$i]['price']; ?>
+            <?php
+              if($product[$i]['oldPrice'] != null){
+            ?>
+            <span class="old"> NRs <?php echo $product[$i]['oldPrice']?></span>
+            <?php
+              }
+            ?>
+          </h4>
         </div>
       </div>
-      <div class="item col-md-3">
+
+    <?php
+      }
+    ?>
+
+<!--       <div class="item col-md-3">
         <div class="text-center">
           <div class="container-image">
               <img src="http://via.placeholder.com/510x680" class="image img-fluid img-thumbnail">
               <div class="middle">
                 <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
               </div>
-            </div>
+            </div> -->
           <!-- <img src="http://via.placeholder.com/510x680" class="img-fluid img-thumbnail"> -->
-          <h4 class="title">Drapey Split-Neck Tank</h4>
+<!--           <h4 class="title">Drapey Split-Neck Tank</h4>
           <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
         </div>
-      </div>
-      <div class="item col-md-3">
+      </div> -->
+<!--       <div class="item col-md-3">
         <div class="text-center">
           <div class="container-image">
               <img src="http://via.placeholder.com/510x680" class="image img-fluid img-thumbnail">
               <div class="middle">
                 <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
               </div>
-            </div>
+            </div> -->
           <!-- <img src="http://via.placeholder.com/510x680" class="img-fluid img-thumbnail"> -->
-          <h4 class="title">V-Neck Knot Slub Tee</h4>
+<!--           <h4 class="title">V-Neck Knot Slub Tee</h4>
           <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
         </div>
-      </div>
-      <div class="item col-md-3">
+      </div> -->
+<!--       <div class="item col-md-3">
         <div class="text-center">
           <div class="container-image">
               <img src="http://via.placeholder.com/510x680" class="image img-fluid img-thumbnail">
               <div class="middle">
                 <div class="text"><a href="#"><h5><i class="fa fa-search" aria-hidden="true"></i> Quick View</h5></a></div>
               </div>
-            </div>
+            </div> -->
           <!-- <img src="http://via.placeholder.com/510x680" class="img-fluid img-thumbnail"> -->
-          <h4 class="title">Drapey Contrast-Stitch Long</h4>
+<!--           <h4 class="title">Drapey Contrast-Stitch Long</h4>
           <h4>NRs 1,200 <span class="old"> NRs 1,500</span></h4>
         </div>
-      </div>
+      </div> -->
   </div>
 </div>
    <?php  include 'library/templates/footer.inc.php';?>

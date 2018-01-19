@@ -1,4 +1,11 @@
 <?php
+/* cartAction.php
+
+This file handles all the action requested by the user from view page. The code blocks would be executed based on the requested action. The following operations can happen based on the action.
+addToCart – Fetches the product details from the products table by the specified product ID and insert the item into the cart using Cart class. After successful operation, the user is redirected to the viewCart.php page.
+updateCartItem – Updates the cart by specific rowid using Cart class and returns the status message.
+removeCartItem – Removes the item from the cart by the specific item id using Cart class. After successful operation, the user is redirected to the viewCart.php page.
+placeOrder – Inserts the cart items data to the orders and order_items table and destroy the cart data from the session. using Cart class. After successful operation, the user is redirected to the orderSuccess.php page. */
 // initialize shopping cart class
 include 'Cart.php';
 $cart = new Cart;

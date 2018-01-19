@@ -1,8 +1,7 @@
 <?php
-	ob_start();
-  session_start();
-?>
-<!DOCTYPE html>
+    ob_start();
+    session_start();
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,7 +15,7 @@
 
 
   <nav class="breadcrumb">
-    <a class="breadcrumb-item" href="http://localhost/WSNepal">Home</a>
+    <a class="breadcrumb-item" href="index.php">Home</a>
     <span class="breadcrumb-item active">lengha</span>
   </nav>
 
@@ -29,9 +28,9 @@
         </h3>
         <br>
             <div id="filterOptions" class="filter_off">
-<!--             <h6>SIZE</h6> -->
+            <h6>SIZE</h6>
           <form name="filterform" method="GET" action="#">
-<!--             <label class="custom-control custom-checkbox">
+            <label class="custom-control custom-checkbox">
               <input name="small" type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">S</span>
@@ -45,7 +44,7 @@
               <input name="large" type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">L</span>
-            </label><br><br>-->  
+            </label><br><br>  
 
             <h6>COLOR</h6>
             <label class="custom-control custom-checkbox">
@@ -93,8 +92,7 @@
               <input name="c" type="checkbox" class="custom-control-input">
               <span class="custom-control-indicator"></span>
               <span class="custom-control-description">NRs 6,000 - NRs 10,999</span>
-            </label><br>
-            <br><br>
+            </label><br><br><br>
           </form>
           <button id="clear" type="submit" class="btn btn-dark btn-lg">CLEAR FILTER</button>
           </div>
@@ -107,7 +105,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
             <div class="col-md-3">
-              <img src="images/blouses.jpg" class="img-fluid">
+              <img src="images/icons/lengha_icon.jpg" class="img-fluid">
             </div>
           </div>
             <nav class="navbar navbar-light bg-light">

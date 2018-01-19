@@ -1,6 +1,4 @@
-<?php 
-session_start();
-ob_start();
+<?php session_start();
 class Cart {
     protected $cart_contents = array();
     
@@ -185,3 +183,13 @@ class Cart {
         unset($_SESSION['cart_contents']);
     }
 }
+
+/* Cart class helps to do all shopping cart related operations easily. The methods of Cart class and their uses are mentioned below.
+contents() – Returns the entire cart content as an array.
+get_item() – Returns a specific cart item details.
+total_items() – Returns the total item count in cart.
+total() – Returns the total price of the cart.
+insert() – Insert items into the cart and save it in the session.
+update() – Update the cart.
+remove() – Removes an item from the cart.
+destroy() – Empties the cart and destroy the session. */

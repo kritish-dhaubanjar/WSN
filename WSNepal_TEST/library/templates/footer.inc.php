@@ -38,7 +38,7 @@
                 <i class="fa fa-paper-plane" aria-hidden="true"></i> womensstuffnepal.com<br>
                 <i class="fa fa-envelope-o" aria-hidden="true"></i> emai: info@womensstuff.com
             </p>
-            <div class="fb-page" data-href="https://www.facebook.com/womenstuffnepal/" data-tabs="timeline" data-width="260" data-height="100" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/womenstuffnepal/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/womenstuffnepal/">Women&#039;s Stuff Nepal</a></blockquote></div>
+            <div class="fb-page" data-href="https://www.facebook.com/womenstuffnepal/" data-tabs="timeline" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/womenstuffnepal/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/womenstuffnepal/">Women&#039;s Stuff Nepal</a></blockquote></div>
           </div>
         </div>
     </div>

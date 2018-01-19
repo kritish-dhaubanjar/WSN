@@ -1,8 +1,9 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-?><div class="container-fluid bg-dark bar">
+<?php 
+    if (session_status() == PHP_SESSION_NONE) {
+         session_start();
+     }
+?> 
+    <div class="container-fluid bg-dark bar">
       <div class="row">
         <div class="news col-md-3">FREE DELIVERY ABOVE Rs.950</div>
         <div id="social" class="col-md-9">
@@ -54,18 +55,24 @@ if (session_status() == PHP_SESSION_NONE) {
             <div class="ml-auto"></div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="saree.php">SAREE</a>
+                <a class="nav-link" href="saree.php">SAREE<span class="sr-only">(current)</span></a>
               </li>               
               <li class="nav-item">
                 <a class="nav-link" href="lengha.php">LENGHAS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">WARM CLOTHES</a>
+                <a class="nav-link" href="kurta.php">KURTAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="dress.php">DRESSES</a>
               </li>   
               <li class="nav-item">
-                <a class="nav-link" href="#">SHIRTS</a>
+                <a class="nav-link" href="shoes.php">SHOES</a>
               </li>   
               <li class="nav-item">
+                <a class="nav-link" href="bag.php">BAGS</a>
+              </li>
+              <li class="nav-item ">
                 <a class="nav-link" href="#">SALE</a>
               </li>                 
             </ul>
