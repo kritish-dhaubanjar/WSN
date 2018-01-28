@@ -211,6 +211,9 @@ hr {
   .custom-inner0, .custom-inner1, .custom-inner2 {
     min-height: 500px; } }
 @media screen and (max-width: 479px) {
+  .generics{
+    display: none;
+  }
   #backCarousel {
     display: none; } }
 #backCarousel h1 {
@@ -223,3 +226,15 @@ hr {
   text-align: left; }
 
 /*# sourceMappingURL=style.css.map */
+/*Genreics*/
+
+.hover-image{
+  width: 165px;
+  height: 165px;
+  transition: 0.2s ease-out;
+}
+
+.hover-image:hover{
+  transform: scale(1.15);
+  transition: 0.2s ease-out;
+}

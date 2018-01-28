@@ -48,6 +48,68 @@
         </div>
     </div>
 
+<!-- Catogories -->
+<div id="products" class="generics">
+  <div class="container">
+     <div class="m-container">
+        <div class="m-row">
+          <div class="col s2">
+          </div>
+          <div class="col s8"><h2 class="text-center">Generics</h2></div>
+        </div>
+      </div>
+
+      <!-- <div class="row"> -->
+          <!-- <div class="item col-md-2 col-sm-2"> -->
+      <div class="m-row">
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="saree.php">
+                  <img src="images/generics/saree_icon.jpg" class="image img-fluid img-thumbnail">
+                </a>
+            </div>
+          </div>
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="lengha.php">
+                <img src="images/generics/lengha_icon.jpg" class="image img-fluid img-thumbnail">
+              </div>
+          </div>
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="kurta.php">
+                  <img src="images/generics/kurti_icon.jpg" class="image img-fluid img-thumbnail">
+                </a>
+              </div>
+          </div>
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="dress.php">
+                  <img src="images/generics/dress_icon.jpg" class="image img-fluid img-thumbnail">
+                </a>
+              </div>
+          </div>
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="shoes.php">
+                  <img src="images/generics/shoe_icon.jpg" class="image img-fluid img-thumbnail">
+                </a>
+              </div>
+          </div>
+          <div class="item col s4 l2 m4">
+              <div class="hover-image">
+                <a href="bag.php">
+                  <img src="images/generics/bag_icon.jpg" class="image img-fluid img-thumbnail">
+                </a>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- New Arrivals Products -->
+
 <div id="products">
   <div class="container">
      <div class="m-container">
@@ -498,5 +560,10 @@
 <?php
 }
 ?>
+  <script type="text/javascript">
+    document.onresize = function () {
+      document.getElementById("backCarousel").reload();
+    }
+  </script>
   </body>
 </html>

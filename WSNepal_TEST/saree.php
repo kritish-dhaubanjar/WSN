@@ -26,7 +26,6 @@
 
       <div id="filter" class="col-md-3">
         <h3> Filter by &nbsp&nbsp<i id="showOptions" class="fa fa-th-large" aria-hidden="true"></i></h3>
-        </h3>
         <br>
             <div id="filterOptions" class="filter_off">
 <!--             <h6>SIZE</h6> -->
@@ -143,6 +142,7 @@
 
     </div>
   </div>
+</div>
 </section>
   <?php  include 'library/templates/footer.inc.php';?> 
   <script type="text/javascript" src="js/filter.js"></script>

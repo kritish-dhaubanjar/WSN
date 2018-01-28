@@ -27,10 +27,10 @@
             <li class="li-links"><a id="openCart" class="navbar-link" href="#" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp(<span id="cartNum"><?php echo $_SESSION['totalItems'];?></span>)</a></li>
           </div>
             <li>                    
-            <form>
+            <form method="GET" action="search.php">
                   <div class="m-row" style="max-height: 5px;">
                       <div class="col s10" style="padding: 0px 0px 0px 5px;">
-                        <input type="text" class="form-control" placeholder="Search our catalog..." aria-label="Search for...">
+                        <input id="search_term" type="text" name="term" class="form-control" placeholder="Search our catalog..." aria-label="Search for...">
                       </div>
                       <div class="col s2" style="padding: 0px 0px 0px 5px;">
                         <span class="input-group-btn">
@@ -55,25 +55,25 @@
             <div class="ml-auto"></div>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="saree.php">SAREE<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="saree.php">#SAREE<span class="sr-only">(current)</span></a>
               </li>               
               <li class="nav-item">
-                <a class="nav-link" href="lengha.php">LENGHAS</a>
+                <a class="nav-link" href="lengha.php">#LENGHAS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="kurta.php">KURTAS</a>
+                <a class="nav-link" href="kurta.php">#KURTAS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="dress.php">DRESSES</a>
+                <a class="nav-link" href="dress.php">#DRESSES</a>
               </li>   
               <li class="nav-item">
-                <a class="nav-link" href="shoes.php">SHOES</a>
+                <a class="nav-link" href="shoes.php">#SHOES</a>
               </li>   
               <li class="nav-item">
-                <a class="nav-link" href="bag.php">BAGS</a>
+                <a class="nav-link" href="bag.php">#BAGS</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="#">SALE</a>
+                <a class="nav-link" href="#">#SALE</a>
               </li>                 
             </ul>
             <div class="col-md-1"></div>
