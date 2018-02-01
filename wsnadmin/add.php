@@ -23,11 +23,11 @@
       $image2 = 'products/'.$id.'-02.png';
       $image3 = 'products/'.$id.'-03.png';
       $cat = $_GET['category'];
-      $title = $_GET['name'];
+      $title = addslashes($_GET['name']);
       $price = $_GET['price'];
       $stock = $_GET['stock'];
-      $details = $_GET['details'];
-      $desc = $_GET['desc'];
+      $details = addslashes($_GET['details']);
+      $desc = addslashes($_GET['desc']);
       $color1 = $_GET['color1'];
       $color2 = $_GET['color2'];
       $color3 = $_GET['color3'];
@@ -47,8 +47,6 @@
 
       $query = "INSERT INTO products(productId, category, title, price, stock, details, s, m, l, description, image1, image2, image3, color1, color2, color3) VALUES ( '$id', '$cat', '$title', '$price','$stock', '$details',
       '$sm','$md','$lg','$desc','$image1', '$image2', '$image3','$color1','$color2','$color3' )";
-
-      // die();
 
       if(mysqli_query($con,$query))
         $_SESSION['success'] = 'success';
